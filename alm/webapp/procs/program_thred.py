@@ -1,6 +1,8 @@
 from threading import Thread
 import threading
 import time
+import cProfile
+
 work_time = [5, 10, 2, 5, 3]
 
 def work0():

@@ -1,5 +1,6 @@
 from multiprocessing import Process
 import time
+
 work_time = [5, 10, 2, 5, 3]
 
 def work0():
@@ -27,32 +28,37 @@ def work4():
     time.sleep(work_time[4])
     print("End work 4")
 
-def work0():
-    print("Start work 0")
-    time.sleep(work_time[0])
-    print("End work 0")
-
 if __name__ == "__main__":
     procs = []
     proc0 = Process(target=work0)
     procs.append(proc0)
     proc0.start()
 
+    time.sleep(1)
+
     proc1 = Process(target=work1)
     procs.append(proc1)
     proc1.start()
+
+    time.sleep(1)
 
     proc2 = Process(target=work2)
     procs.append(proc2)
     proc2.start()
 
+    time.sleep(1)
+
     proc3 = Process(target=work3)
     procs.append(proc3)
     proc3.start()
 
+    time.sleep(1)
+
     proc4 = Process(target=work4)
     procs.append(proc4)
     proc4.start()
+
+    time.sleep(1)
 
     # instantiating process with arguments
     #proc = Process(target=t_func, args=(name,))
